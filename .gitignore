@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NetflixApi.Api/bin/Debug/net8.0
+/NetflixApi.Api/obj
+/NetflixApi.Api/Properties/launchSettings.json
+/NetflixApi.Api/appsettings.Development.json
+/NetflixApi.Application/bin/Debug/net8.0
+/NetflixApi.Application/obj
+/NetflixApi.Domain/.vs
+/NetflixApi.Domain/NetflixApi.Domain/bin/Debug/net8.0
+/NetflixApi.Domain/NetflixApi.Domain/obj
+/NetflixApi.Infrastructure/bin/Debug/net8.0
+/NetflixApi.Infrastructure/obj

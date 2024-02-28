@@ -1,7 +1,5 @@
 ﻿using NetflixApi.Application.Abstractions.Messaging;
-using NetflixApi.Application.Movies.MovieHistories.AddWatchHistory;
 using NetflixApi.Domain.Abstractions;
-using NetflixApi.Domain.Movies.MovieHistories;
 using NetflixApi.Domain.Users;
 using NetflixApi.Domain.WatchHistories;
 using Serilog;

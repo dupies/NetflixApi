@@ -1,5 +1,4 @@
 ﻿using NetflixApi.Domain.Abstractions;
-using NetflixApi.Domain.Movies.MovieHistories;
 using NetflixApi.Domain.Shared;
 using NetflixApi.Domain.Users;
 
@@ -39,7 +38,6 @@ public class Movie : Entity
         Video = video;
         Vote_average = new(vote_average);
         Vote_count = new(vote_count);
-        MovieHistories = new List<MovieHistory>();
         Users = new List<User>();
     }
 
@@ -56,6 +54,5 @@ public class Movie : Entity
     public bool Video { get; set; }
     public Vote_average Vote_average { get; set; }
     public Vote_count Vote_count { get; set; }
-    public virtual ICollection<MovieHistory> MovieHistories { get; set; }
     public virtual ICollection<User> Users { get; set; }
 }

@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using NetflixApi.Application.Exceptions;
 using NetflixApi.Domain.Abstractions;
 using NetflixApi.Domain.Movies;
-using NetflixApi.Domain.Movies.MovieHistories;
 using NetflixApi.Domain.TVShows;
 using NetflixApi.Domain.Users;
 using NetflixApi.Domain.WatchHistories;
@@ -20,7 +19,6 @@ public class ApplicationDbContext : DbContext, IUnitOfWork
     public DbSet<TVShow> TVShows { get; set; }
     public DbSet<Movie> Movies { get; set; }
     public DbSet<User> Users { get; set; }
-    public DbSet<MovieHistory> MovieHistories { get; set; }
     public DbSet<WatchHistory> WatchHistories { get; set; }
 
     #endregion

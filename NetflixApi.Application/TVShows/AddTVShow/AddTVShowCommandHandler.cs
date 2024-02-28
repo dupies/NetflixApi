@@ -1,6 +1,8 @@
 ﻿using NetflixApi.Application.Abstractions.Messaging;
 using NetflixApi.Domain.Abstractions;
+using NetflixApi.Domain.Movies;
 using NetflixApi.Domain.TVShows;
+using Serilog;
 
 namespace NetflixApi.Application.TVShows.AddTVShow;
 
@@ -15,7 +17,13 @@ internal sealed class AddTVShowCommandHandler : ICommandHandler<AddTVShowCommand
 
     public async Task<Result<int>> Handle(AddTVShowCommand command, CancellationToken cancellationToken)
     {
-        var tvShow = new TVShow(
+        Log.Information("Adding TVShow with Id {Id}", command.request.Id);
+
+        var result = await _tVShowRespository.GetByIdAsync(command.request.Id);
+
+        if (result == null)
+        {
+            var tvShow = new TVShow(
             command.request.Id,
             command.request.Adult,
             command.request.Backdrop_path,
@@ -32,8 +40,16 @@ internal sealed class AddTVShowCommandHandler : ICommandHandler<AddTVShowCommand
             command.request.Vote_count
             );
 
-        await _tVShowRespository.Add(tvShow);
+            await _tVShowRespository.Add(tvShow);
 
-        return tvShow.Id;
+            return tvShow.Id;
+        }
+        else
+        {
+            Log.Information("TVShow with Id {Id} already exists", command.request.Id);
+            return Result.Failure<int>(MovieErrors.AllreadyExists);
+        }
+
+        
     }
 }

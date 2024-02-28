@@ -13,4 +13,17 @@ internal sealed class UserRepository : Repository<User>, IUserRepository
     {
         throw new NotImplementedException();
     }
+
+    public async Task<User> GetDetailsByIdAsync(int id, CancellationToken cancellationToken = default)
+    {
+        using (var context = await this._contextFactory.CreateDbContextAsync())
+        {
+            var result = await context.Users.FindAsync(id);
+
+            var movieHistories = await context.MovieHistories.Where(h => h.UserId == id).ToListAsync();
+            result.MovieHistories = movieHistories;
+
+            return result;
+        }
+    }
 }

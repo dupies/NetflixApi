@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NetflixApi.Domain.Movies;
-using NetflixApi.Domain.TVShows;
 
 namespace NetflixApi.Infrastructure.Repositories;
 

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetflixApi.Domain.Abstractions;
 using NetflixApi.Domain.Movies;
+using NetflixApi.Domain.Movies.MovieHistories;
 using NetflixApi.Domain.TVShows;
 using NetflixApi.Domain.Users;
 using NetflixApi.Infrastructure.Data;
@@ -38,6 +39,7 @@ public static class DependencyInjection
         services.AddScoped<ITVShowRespository, TVShowRepository>();
         services.AddScoped<IMovieRepository, MovieRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IMovieHistoryRepository, MovieHistoryRepository>();
 
         return services;
     }

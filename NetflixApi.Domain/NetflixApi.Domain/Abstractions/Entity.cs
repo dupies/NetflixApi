@@ -4,6 +4,10 @@ public class Entity
 {
     private readonly List<IDomainEvent> _domainEvents = new();
 
+    public Entity()
+    {
+        Id = 0;
+    }
     public Entity(int id)
     {
         Id = id;

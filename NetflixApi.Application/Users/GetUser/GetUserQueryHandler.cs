@@ -1,6 +1,7 @@
 ﻿using NetflixApi.Application.Abstractions.Messaging;
 using NetflixApi.Domain.Abstractions;
 using NetflixApi.Domain.Users;
+using Serilog;
 
 namespace NetflixApi.Application.Users.GetUser;
 
@@ -15,7 +16,9 @@ internal sealed class GetUserQueryHandler : IQueryHandler<GetUserQuery, UserResp
 
     public async Task<Result<UserResponse>> Handle(GetUserQuery request, CancellationToken cancellationToken)
     {
-        var result = await _userRepository.GetByIdAsync(request.UserId, cancellationToken);
+        Log.Information("Getting User with Id {Id}", request);
+
+        var result = await _userRepository.GetDetailsByIdAsync(request.UserId, cancellationToken);
 
         if (result != null)
         {
@@ -29,6 +32,7 @@ internal sealed class GetUserQueryHandler : IQueryHandler<GetUserQuery, UserResp
         }
         else
         {
+            Log.Information("User with Id {Id} does not exists", request);
             return Result.Failure<UserResponse>(UserErrors.NotFound);
         }
     }

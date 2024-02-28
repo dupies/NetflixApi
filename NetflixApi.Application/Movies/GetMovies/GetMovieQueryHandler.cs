@@ -1,6 +1,7 @@
 ﻿using NetflixApi.Application.Abstractions.Messaging;
 using NetflixApi.Domain.Abstractions;
 using NetflixApi.Domain.Movies;
+using Serilog;
 
 namespace NetflixApi.Application.Movies.GetMovies;
 
@@ -14,6 +15,8 @@ internal sealed class GetMovieQueryHandler : IQueryHandler<GetMovieQuery, MovieR
     }
     public async Task<Result<MovieResponse>> Handle(GetMovieQuery request, CancellationToken cancellationToken)
     {
+        Log.Information("Getting Movie with Id {Id}", request);
+
         var result = await _movieRepository.GetByIdAsync(request.TVShowId, cancellationToken);
         if (result != null)
         {
@@ -37,6 +40,7 @@ internal sealed class GetMovieQueryHandler : IQueryHandler<GetMovieQuery, MovieR
         }
         else
         {
+            Log.Information("Movie with Id {Id} does not exists", request);
             return Result.Failure<MovieResponse>(MovieErrors.NotFound);
         }
     }

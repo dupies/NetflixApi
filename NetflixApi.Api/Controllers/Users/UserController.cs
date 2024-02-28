@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NetflixApi.Api.Models;
+using NetflixApi.Application.Movies.MovieHistories.AddWatchHistory;
 using NetflixApi.Application.TVShows.AddTVShow;
 using NetflixApi.Application.TVShows.GetTVShow;
 using NetflixApi.Application.Users.AddUser;
@@ -88,6 +89,30 @@ public class UserController : APIControllerBase
         catch (Exception ex)
         {
             Log.Error(ex, "Error while trying to User.");
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpPost("watchmovie")]
+    public async Task<IActionResult> AddMovieHistory(
+        AddMovieHistoryRequest request,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            var command = new AddMovieHistoryCommand(request);
+
+            var result = await _sender.Send(command, cancellationToken);
+            if (result != null)
+            {
+                return Created($"{_applicationState.BaseUrl}/api/Movies/{result.Value}", result.Value);
+            }
+
+            return BadRequest();
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error while trying to AddMovie");
             return BadRequest(ex.Message);
         }
     }

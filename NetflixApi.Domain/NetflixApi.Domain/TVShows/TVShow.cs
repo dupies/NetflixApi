@@ -5,8 +5,7 @@ namespace NetflixApi.Domain.TVShows;
 
 public class TVShow : Entity
 {
-    public TVShow(int id)
-        : base(id)
+    public TVShow()
     {
         
     }

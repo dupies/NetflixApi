@@ -1,11 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NetflixApi.Api.Models;
-using NetflixApi.Application.Movies.MovieHistories.AddWatchHistory;
-using NetflixApi.Application.TVShows.AddTVShow;
-using NetflixApi.Application.TVShows.GetTVShow;
 using NetflixApi.Application.Users.AddUser;
 using NetflixApi.Application.Users.GetUser;
+using NetflixApi.Application.WatchHistories.AddWatchHistory;
 using Serilog;
 
 namespace NetflixApi.Api.Controllers.Users;
@@ -93,14 +91,14 @@ public class UserController : APIControllerBase
         }
     }
 
-    [HttpPost("watchmovie")]
+    [HttpPost("watch")]
     public async Task<IActionResult> AddMovieHistory(
-        AddMovieHistoryRequest request,
+        AddWatchHistoryRequest request,
         CancellationToken cancellationToken)
     {
         try
         {
-            var command = new AddMovieHistoryCommand(request);
+            var command = new AddWatchHistoryCommand(request);
 
             var result = await _sender.Send(command, cancellationToken);
             if (result != null)

@@ -26,6 +26,10 @@ internal sealed class UserConfigurations : IEntityTypeConfiguration<User>
                       .HasForeignKey(mh => mh.UserId)
             );
 
+        builder.HasMany(c => c.WatchHistories)
+            .WithOne(wh => wh.User)
+            .HasForeignKey(wh => wh.UserId);
+
         builder.Property(c => c.Name)
             .HasConversion(
                 n => n.Value,

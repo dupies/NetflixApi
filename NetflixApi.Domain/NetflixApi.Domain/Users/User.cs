@@ -2,6 +2,7 @@
 using NetflixApi.Domain.Movies;
 using NetflixApi.Domain.Movies.MovieHistories;
 using NetflixApi.Domain.Shared;
+using NetflixApi.Domain.WatchHistories;
 
 namespace NetflixApi.Domain.Users;
 
@@ -33,4 +34,5 @@ public class User : Entity
     public virtual ICollection<MovieHistory> MovieHistories { get; set; }
     public virtual ICollection<Movie> Movies { get; set; }
 
+    public virtual ICollection<WatchHistory> WatchHistories { get; set; }
 }

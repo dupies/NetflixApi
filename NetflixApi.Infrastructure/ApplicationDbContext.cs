@@ -6,6 +6,7 @@ using NetflixApi.Domain.Movies;
 using NetflixApi.Domain.Movies.MovieHistories;
 using NetflixApi.Domain.TVShows;
 using NetflixApi.Domain.Users;
+using NetflixApi.Domain.WatchHistories;
 
 
 namespace NetflixApi.Infrastructure;
@@ -20,6 +21,8 @@ public class ApplicationDbContext : DbContext, IUnitOfWork
     public DbSet<Movie> Movies { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<MovieHistory> MovieHistories { get; set; }
+    public DbSet<WatchHistory> WatchHistories { get; set; }
+
     #endregion
 
     public ApplicationDbContext(DbContextOptions options, IPublisher publisher)

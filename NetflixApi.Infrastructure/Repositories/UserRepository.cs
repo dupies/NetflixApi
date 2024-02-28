@@ -23,6 +23,8 @@ internal sealed class UserRepository : Repository<User>, IUserRepository
             var movieHistories = await context.MovieHistories.Where(h => h.UserId == id).ToListAsync();
             result.MovieHistories = movieHistories;
 
+            await context.WatchHistories.LoadAsync();
+
             return result;
         }
     }

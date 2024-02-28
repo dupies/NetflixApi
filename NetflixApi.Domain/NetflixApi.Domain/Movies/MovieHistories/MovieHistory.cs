@@ -13,12 +13,12 @@ public class MovieHistory : Entity
 
     public MovieHistory(
         int userId,
-        int movie)
+        int movieId)
     {
         Random random = new Random();
         Id = random.Next(1, 1001);
         UserId = userId;
-        MovieId = movie;
+        MovieId = movieId;
         Date = new(DateTime.UtcNow);
     }
     public int UserId { get; set; }

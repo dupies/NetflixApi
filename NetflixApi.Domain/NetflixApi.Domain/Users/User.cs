@@ -1,6 +1,7 @@
 ﻿using NetflixApi.Domain.Abstractions;
 using NetflixApi.Domain.Movies;
 using NetflixApi.Domain.Shared;
+using NetflixApi.Domain.TVShows;
 using NetflixApi.Domain.WatchHistories;
 
 namespace NetflixApi.Domain.Users;
@@ -22,6 +23,8 @@ public class User : Entity
         AvatarId = new (avatarId);
         ImageUrl = new (imageUrl);
         Movies = new List<Movie>();
+        TVShows = new List<TVShow>();
+        WatchHistories = new List<WatchHistory>();
     }
 
     public int[] FavouriteTVShow { get; set; }
@@ -30,6 +33,7 @@ public class User : Entity
     public AvatarId AvatarId { get; set; }
     public ImageUrl ImageUrl { get; set; }
     public virtual ICollection<Movie> Movies { get; set; }
+    public virtual ICollection<TVShow> TVShows { get; set; }
 
     public virtual ICollection<WatchHistory> WatchHistories { get; set; }
 }

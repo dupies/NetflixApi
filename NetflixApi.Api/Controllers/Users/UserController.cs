@@ -4,6 +4,7 @@ using NetflixApi.Api.Models;
 using NetflixApi.Application.Users.AddUser;
 using NetflixApi.Application.Users.GetUser;
 using NetflixApi.Application.WatchHistories.AddWatchHistory;
+using NetflixApi.Application.WatchHistories.GetUserWatchHistories;
 using Serilog;
 
 namespace NetflixApi.Api.Controllers.Users;
@@ -113,5 +114,29 @@ public class UserController : APIControllerBase
             Log.Error(ex, "Error while trying to AddMovie");
             return BadRequest(ex.Message);
         }
+    }
+    [HttpGet("{userId}/watch")]
+    public async Task<IActionResult> GetUserWatchHistory(
+        int userId,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            var query = new GetUserWatchHistoriesQuery(userId);
+
+            var result = await _sender.Send(query, cancellationToken);
+
+            if (result.Value == null)
+            {
+                return NotFound($"User with ID: {userId} no found.");
+            }
+            return Ok(result.Value);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error while trying to get User.");
+            return BadRequest(ex.Message);
+        }
+
     }
 }

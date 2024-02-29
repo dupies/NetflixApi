@@ -26,7 +26,8 @@ internal sealed class GetUserQueryHandler : IQueryHandler<GetUserQuery, UserResp
             result.Id,
             result.Name.Value,
             result.AvatarId.Value,
-            result.ImageUrl.Value);
+            result.ImageUrl.Value,
+            result.WatchHistories);
 
             return response;
         }

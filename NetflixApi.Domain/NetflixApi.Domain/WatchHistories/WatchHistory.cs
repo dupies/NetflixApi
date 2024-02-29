@@ -29,9 +29,9 @@ public class WatchHistory : Entity
     public int ShowId { get; set; }
     public WatchDate Date { get; set; }
     public ShowType Type { get; set; }
-
     public virtual User User { get; set; }
-    public virtual Movie Movie { get; set; }
-    public virtual TVShow TVSHow { get; set; }
-    public string PartitionKey { get => this.ShowId.ToString(); }
+    [NotMapped]
+    public Movie Movie { get; set; }
+    [NotMapped]
+    public TVShow TVShow { get; set; }
 }

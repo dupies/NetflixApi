@@ -22,6 +22,9 @@ public static class DependencyInjection
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
+        var assemblyWithProfiles = typeof(Abstractions.MappingConfigurations.ApplicationMappings).Assembly;
+        services.AddAutoMapper(assemblyWithProfiles);
+
         return services;
     }
 }

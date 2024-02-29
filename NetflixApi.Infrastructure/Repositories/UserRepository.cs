@@ -20,8 +20,6 @@ internal sealed class UserRepository : Repository<User>, IUserRepository
         {
             var result = await context.Users.FindAsync(id);
 
-            await context.WatchHistories.LoadAsync();
-
             return result;
         }
     }

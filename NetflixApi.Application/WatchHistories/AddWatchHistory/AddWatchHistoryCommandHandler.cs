@@ -45,4 +45,3 @@ internal sealed class AddWatchHistoryCommandHandler : ICommandHandler<AddWatchHi
         }
     }
 }
-

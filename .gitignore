@@ -16,3 +16,5 @@
 .vs
 NetflixApi.Domain/NetflixApi.Application.IntegrationTests/bin
 NetflixApi.Domain/NetflixApi.Application.IntegrationTests/obj
+Netflix.Frontend/bin
+Netflix.Frontend/obj

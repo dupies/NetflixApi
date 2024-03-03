@@ -25,7 +25,7 @@ public class MostWatchedHorrorBase : ComponentBase
         var result = await MoviesDataService.GetAllMovies();
         Movies = result.ToList();
 
-        HorrorMovies = Movies.Where(am => am.Genre_ids.Contains(12)).OrderByDescending(m => m.Popularity).Take(8).ToList();
+        HorrorMovies = Movies.Where(am => am.Genre_ids.Contains(12)).OrderByDescending(m => m.Popularity).Take(7).ToList();
     }
 
 }

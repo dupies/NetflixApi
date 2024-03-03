@@ -1,13 +1,19 @@
 ﻿@inherits Netflix.Frontend.Components.MostWatchedHorrorBase
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-<!-- Most watched Horror -->
 <div class="row">
     <h2>Most watched Horror</h2>
-    <div class="row__posters">
 
+    <div class="row__posters">
         @foreach (var movie in HorrorMovies)
         {
-            <img class="row__poster row__posterLarge" src="@($"{BaseUrl}{movie.Poster_path}")" alt="" />
+            <div class="movie-card" style="background-image: url('@($"{BaseUrl}{movie.Poster_path}")');">
+                <div class="movie-info">
+                    <h3>@movie.Title</h3>
+                    <i class="bi bi-play-circle play-button"></i>
+                    <i class="bi bi-heart-fill like-icon" ></i>
+                </div>
+            </div>
         }
     </div>
 </div>

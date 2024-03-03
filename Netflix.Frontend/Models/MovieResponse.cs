@@ -1,4 +1,4 @@
-﻿namespace NetflixApi.Application.Movies.GetMovies;
+﻿namespace Netflix.Frontend.Models;
 
 public record MovieResponse(
         int Id,
@@ -16,3 +16,4 @@ public record MovieResponse(
         double Vote_average,
         int Vote_count
     );
+

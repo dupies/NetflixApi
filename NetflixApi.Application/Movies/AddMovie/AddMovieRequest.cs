@@ -4,7 +4,7 @@ public record AddMovieRequest(
         int Id,
         bool Adult,
         string Backdrop_path,
-        int[] Genre_ids,
+        List<int> Genre_ids,
         string Original_language,
         string Original_title,
         string Overview,

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Netflix.Frontend;
+namespace Netflix.Frontend.Shared;
 
 public class PageBase : ComponentBase
 {

@@ -9,7 +9,7 @@ internal sealed class UserRepository : Repository<User>, IUserRepository
     {
     }
 
-    public Task<IEnumerable<User>> GetAll(CancellationToken cancellationToken = default)
+    public Task<IEnumerable<User>> GetAll(int gueryId, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }

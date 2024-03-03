@@ -1,21 +1,13 @@
-﻿<!-- Most watched Horror -->
+﻿@inherits Netflix.Frontend.Components.MostWatchedHorrorBase
+
+<!-- Most watched Horror -->
 <div class="row">
     <h2>Most watched Horror</h2>
     <div class="row__posters">
-        <img class="row__poster" src="images/small-movie1.jpg" alt="" />
 
-        <img class="row__poster" src="images/small-movie2.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie3.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie4.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie5.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie6.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie7.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie8.jpg" alt="" />
+        @foreach (var movie in HorrorMovies)
+        {
+            <img class="row__poster row__posterLarge" src="@($"{BaseUrl}{movie.Poster_path}")" alt="" />
+        }
     </div>
 </div>

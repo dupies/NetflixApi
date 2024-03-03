@@ -10,7 +10,7 @@ internal sealed class TVShowRepository : Repository<TVShow>, ITVShowRespository
     {
     }
 
-    public Task<IEnumerable<TVShow>> GetAll(CancellationToken cancellationToken)
+    public Task<IEnumerable<TVShow>> GetAll(int gueryId, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

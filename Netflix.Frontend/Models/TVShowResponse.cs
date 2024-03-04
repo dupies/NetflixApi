@@ -1,18 +1,18 @@
-﻿namespace NetflixApi.Application.Movies.AddMovie;
+﻿namespace Netflix.Frontend.Models;
 
-public record AddMovieRequest(
+public record TVShowResponse(
         int Id,
         bool Adult,
         string Backdrop_path,
         int[] Genre_ids,
+        string[] Origin_country,
         string Original_language,
-        string Original_title,
+        string Original_name,
         string Overview,
         double Popularity,
         string Poster_path,
-        DateOnly Release_date,
-        string Title,
-        bool Video,
+        DateOnly First_air_date,
+        string Name,
         double Vote_average,
         int Vote_count
     );

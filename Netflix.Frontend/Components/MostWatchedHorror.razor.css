@@ -43,11 +43,11 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 32px;
+    font-size: 26px;
     margin: 5px;
     color: white;
 }
 
 .play-button {
-    font-size: 40px;
+    font-size: 38px;
 }

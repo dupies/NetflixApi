@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetflixApi.Application.Inte
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 - Frontends", "06 - Frontends", "{9E18C010-A57C-4269-B38F-82EBA3D62607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netflix.Frontend", "..\Netflix.Frontend\Netflix.Frontend.csproj", "{9FBA65F3-BFFB-47FD-BD89-CDA699D89BFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netflix.Frontend", "..\Netflix.Frontend\Netflix.Frontend.csproj", "{9FBA65F3-BFFB-47FD-BD89-CDA699D89BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

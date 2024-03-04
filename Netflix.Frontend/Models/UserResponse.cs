@@ -1,6 +1,4 @@
-﻿using NetflixApi.Domain.WatchHistories;
-
-namespace NetflixApi.Application.Users.GetUser;
+﻿namespace Netflix.Frontend.Models;
 public record UserResponse(
     int Id,
     string Name,

@@ -12,7 +12,7 @@ public class Movie : Entity
         int id,
         bool adult,
         string backdrop_path,
-        List<int> genre_ids,
+        int[] genre_ids,
         string original_language,
         string original_title,
         string overview,
@@ -27,7 +27,6 @@ public class Movie : Entity
     {
         Adult = adult;
         Backdrop_path = new(backdrop_path);
-        Genre_ids = genre_ids;
         Original_language = new(original_language);
         Original_title = new(original_title);
         Overview = new(overview);
@@ -43,7 +42,7 @@ public class Movie : Entity
 
     public bool Adult { get; set; }
     public Backdrop_path Backdrop_path { get; set; }
-    public List<int> Genre_ids { get; set; }
+    public int[] Genre_ids { get; set; }
     public Original_language Original_language { get; set; }
     public Original_title Original_title { get; set; }
     public Overview Overview { get; set; }

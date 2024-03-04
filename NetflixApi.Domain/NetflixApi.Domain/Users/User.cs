@@ -24,11 +24,13 @@ public class User : Entity
         ImageUrl = new (imageUrl);
         Movies = new List<Movie>();
         TVShows = new List<TVShow>();
+        FavouriteTVShow = new List<int>();
+        FavouriteMovie = new List<int>();
         WatchHistories = new List<WatchHistory>();
     }
 
-    public int[] FavouriteTVShow { get; set; }
-    public int[] FavouriteMovie { get; set; }
+    public List<int> FavouriteTVShow { get; set; }
+    public List<int> FavouriteMovie { get; set; }
     public Name Name { get; set; }
     public AvatarId AvatarId { get; set; }
     public ImageUrl ImageUrl { get; set; }

@@ -1,7 +1,7 @@
 ﻿using Netflix.Frontend.Models;
 using Newtonsoft.Json;
 
-namespace NetflixApi.Api.Services;
+namespace Netflix.Frontend.Services;
 
 public abstract class BaseDataService
 {
@@ -47,12 +47,9 @@ public abstract class BaseDataService
     {
         var response = await _httpClient.GetStringAsync(BaseApiPath + requestUrl);
 
-        var x = JsonConvert.DeserializeObject<ICollection<MovieResponse>>(response);
-
         var result = JsonConvert.DeserializeObject<T>(response);
 
         return result;
-
     }
 
     protected async Task<T> SendAsync<T>(string requestUrl, HttpMethod httpMethod)

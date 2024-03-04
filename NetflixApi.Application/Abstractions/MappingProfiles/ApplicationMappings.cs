@@ -26,7 +26,7 @@ public class ApplicationMappings : Profile
         .ForCtorParam(nameof(MovieResponse.Id), opt => opt.MapFrom(src => src.Id))
         .ForCtorParam(nameof(MovieResponse.Adult), opt => opt.MapFrom(src => src.Adult))
         .ForCtorParam(nameof(MovieResponse.Backdrop_path), opt => opt.MapFrom(src => src.Backdrop_path.Value)) 
-        .ForCtorParam(nameof(MovieResponse.Genre_ids), opt => opt.MapFrom(src => src.Genre_ids))
+        .ForCtorParam(nameof(MovieResponse.Genre_ids), opt => opt.MapFrom(src => src.Genre_ids.ToList()))
         .ForCtorParam(nameof(MovieResponse.Original_language), opt => opt.MapFrom(src => src.Original_language.Value)) 
         .ForCtorParam(nameof(MovieResponse.Original_title), opt => opt.MapFrom(src => src.Original_title.Value)) 
         .ForCtorParam(nameof(MovieResponse.Overview), opt => opt.MapFrom(src => src.Overview.Value))
@@ -36,6 +36,6 @@ public class ApplicationMappings : Profile
         .ForCtorParam(nameof(MovieResponse.Title), opt => opt.MapFrom(src => src.Title.Value)) 
         .ForCtorParam(nameof(MovieResponse.Video), opt => opt.MapFrom(src => src.Video))
         .ForCtorParam(nameof(MovieResponse.Vote_average), opt => opt.MapFrom(src => src.Vote_average.Value)) 
-        .ForCtorParam(nameof(MovieResponse.Vote_count), opt => opt.MapFrom(src => src.Vote_count.Value)); 
-}
+        .ForCtorParam(nameof(MovieResponse.Vote_count), opt => opt.MapFrom(src => src.Vote_count.Value));
+    }
 }

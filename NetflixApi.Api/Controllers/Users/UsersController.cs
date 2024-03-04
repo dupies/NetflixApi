@@ -9,12 +9,12 @@ using Serilog;
 
 namespace NetflixApi.Api.Controllers.Users;
 
-public class UserController : APIControllerBase
+public class UsersController : APIControllerBase
 {
     private readonly ISender _sender;
     private readonly ApplicationState _applicationState;
 
-    public UserController(ISender sender, ApplicationState applicationState)
+    public UsersController(ISender sender, ApplicationState applicationState)
     {
         _sender = sender;
         _applicationState = applicationState;

@@ -1,9 +1,7 @@
 ﻿using NetflixApi.Application.Abstractions.Messaging;
-using NetflixApi.Application.TVShows.AddTVShow;
 using NetflixApi.Domain.Abstractions;
 using NetflixApi.Domain.Movies;
-using NetflixApi.Domain.TVShows;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Serilog;
 
 namespace NetflixApi.Application.Movies.AddMovie;
 
@@ -16,28 +14,39 @@ internal sealed class AddMovieCommandHandler : ICommandHandler<AddMovieCommand, 
         _movieRepository = movieRepository;
     }
 
-    public async Task<Result<int>> Handle(AddMovieCommand command
-        , CancellationToken cancellationToken)
+    public async Task<Result<int>> Handle(AddMovieCommand command, CancellationToken cancellationToken)
     {
-        var movie = new Movie(
-        command.request.Id,
-            command.request.Adult,
-            command.request.Backdrop_path,
-            command.request.Genre_ids,
-            command.request.Original_language,
-            command.request.Original_title,
-            command.request.Overview,
-            command.request.Popularity,
-            command.request.Poster_path,
-            command.request.Release_date,
-            command.request.Title,
-            command.request.Video,
-            command.request.Vote_average,
-            command.request.Vote_count
-            );
+        Log.Information("Adding movie with Id {Id}", command.request.Id);
 
-        await _movieRepository.Add(movie);
+        var result = await _movieRepository.GetByIdAsync(command.request.Id);
 
-        return movie.Id;
+        if (result == null)
+        {
+            var movie = new Movie(
+            command.request.Id,
+                command.request.Adult,
+                command.request.Backdrop_path,
+                command.request.Genre_ids,
+                command.request.Original_language,
+                command.request.Original_title,
+                command.request.Overview,
+                command.request.Popularity,
+                command.request.Poster_path,
+                command.request.Release_date,
+                command.request.Title,
+                command.request.Video,
+                command.request.Vote_average,
+                command.request.Vote_count
+                );
+
+            await _movieRepository.Add(movie);
+
+            return movie.Id;
+        }
+        else
+        {
+            Log.Information("Movie with Id {Id} already exists", command.request.Id);
+            return Result.Failure<int>(MovieErrors.AllreadyExists);
+        }
     }
 }

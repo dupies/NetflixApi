@@ -1,0 +1,53 @@
+﻿.row__posters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.movie-card {
+    position: relative;
+    width: 200px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.movie-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .movie-info {
+    opacity: 1;
+}
+
+.movie-card:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.like-icon, .play-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 26px;
+    margin: 5px;
+    color: white;
+}
+
+.play-button {
+    font-size: 38px;
+}

@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using NetflixApi.Api.Models;
 using NetflixApi.Application.Movies.AddMovie;
+using NetflixApi.Application.Movies.GetAllMovies;
 using NetflixApi.Application.Movies.GetMovies;
-using NetflixApi.Application.TVShows.AddTVShow;
-using NetflixApi.Application.TVShows.GetTVShow;
 using Serilog;
 
 namespace NetflixApi.Api.Controllers.Movies;
@@ -34,6 +33,30 @@ public class MoviesController : APIControllerBase
             if (result.Value == null)
             {
                 return NotFound($"TVShow with ID: {movieId} no found.");
+            }
+            return Ok(result.Value);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error while trying to TVShow");
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetMovies([FromQuery]
+        int genreId,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            var query = new GetAllMoviesQuery(genreId);
+
+            var result = await _sender.Send(query, cancellationToken);
+
+            if (result.Value == null)
+            {
+                return NotFound($"TVShow with ID: {genreId} no found.");
             }
             return Ok(result.Value);
         }

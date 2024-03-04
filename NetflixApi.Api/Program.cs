@@ -3,6 +3,7 @@ using NetflixApi.Api.Models;
 using NetflixApi.Application;
 using NetflixApi.Infrastructure;
 using Serilog;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,20 +17,24 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
-builder.Host.UseSerilog((context, configuration) =>
-{
-    configuration.ReadFrom.Configuration(context.Configuration);
-});
-
 var appState = new ApplicationState();
 appState.BaseUrl = builder.Configuration["BaseUrl"]!;
 builder.Services.AddSingleton(appState);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Open", builder => builder.WithOrigins("*")
+                                                .AllowAnyHeader()
+                                                .AllowAnyMethod()
+                                                .SetPreflightMaxAge(TimeSpan.FromHours(1)));
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseCors("Open");
     app.UseSwagger();
     app.UseSwaggerUI();
 }

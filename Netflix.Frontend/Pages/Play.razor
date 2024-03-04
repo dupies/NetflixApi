@@ -1,0 +1,20 @@
+﻿@page "/play/{MovieId:int}"
+@inherits Netflix.Frontend.Pages.PlayBase
+
+@if(Movie is not null)
+{
+    <div class="WatchPage">
+        <div>
+            <iframe class="Player" 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/GokKUqLcvD8?si=OFOpNrTbU061ntQW" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen="">
+            </iframe>
+        </div>
+    </div>
+}
+
+

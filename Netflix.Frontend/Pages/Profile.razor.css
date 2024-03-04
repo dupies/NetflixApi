@@ -1,0 +1,397 @@
+﻿.UserProfile {
+    margin-left: auto
+}
+
+    .UserProfile .User {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex
+    }
+
+        .UserProfile .User .image {
+            border-radius: 44px;
+            margin-left: 10px;
+            overflow: hidden;
+            width: 44px;
+            height: 44px;
+            box-sizing: border-box;
+            border: 3px solid transparent;
+            -webkit-transition: border .125s ease;
+            transition: border .125s ease
+        }
+
+            .UserProfile .User .image img {
+                width: 100%;
+                display: block
+            }
+
+            .UserProfile .User .image svg {
+                width: 100%;
+                height: 100%;
+                display: block
+            }
+
+        .UserProfile .User .name {
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            font-size: 18px;
+            font-weight: 300;
+            height: 44px
+        }
+
+        .UserProfile .User:hover {
+            cursor: pointer
+        }
+
+            .UserProfile .User:hover .image {
+                border: 3px solid #e50914
+            }
+
+    .UserProfile .UserProfile-menu {
+        display: none
+    }
+
+.ProfilePage {
+    margin: 10rem 5rem 0;
+    color: #6d6d6d;
+    text-align: center;
+    opacity: 0;
+    animation: fade-in .3s ease .2s 1 forwards
+}
+
+    .ProfilePage h1 {
+        color: #fff;
+        font-size: 50px
+    }
+
+    .ProfilePage .profile-name a {
+        padding: 5px 15px;
+        color: #6d6d6d;
+        font-size: 17px;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 1px solid #6d6d6d;
+        transition: all .3s ease
+    }
+
+        .ProfilePage .profile-name a:hover {
+            color: #fff;
+            border: 1px solid #fff
+        }
+
+    .ProfilePage .wrapper {
+        margin: 100px 0;
+        text-align: center
+    }
+
+    .ProfilePage .profile {
+        width: 150px
+    }
+
+    .ProfilePage .profile-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 800px;
+        margin: 50px auto
+    }
+
+    .ProfilePage .profile-icon {
+        width: 150px;
+        height: 150px;
+        border: 6px solid #1f1f1f;
+        transition: all .3s ease;
+        box-sizing: content-box
+    }
+
+    .ProfilePage .profile-name {
+        margin: 30px 0;
+        line-height: 1.25em;
+        transition: all .3s ease
+    }
+
+    .ProfilePage .profile:hover .profile-icon {
+        border: 6px solid #fff
+    }
+
+    .ProfilePage .profile:hover .profile-name {
+        color: #fff
+    }
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(1.2)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes raise {
+    0% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    10% {
+        transform: translateY(-10px) rotate(5deg)
+    }
+
+    20% {
+        transform: translateY(-10px) rotate(5deg)
+    }
+
+    25% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes tilt {
+    0% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    10% {
+        transform: translateY(-2px) rotate(5deg)
+    }
+
+    20% {
+        transform: translateY(-2px) rotate(5deg)
+    }
+
+    25% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes mustache {
+    20% {
+        transform: translateY(0) scale(1)
+    }
+
+    30% {
+        transform: translateY(4px) rotate(-3deg) scale(1.03)
+    }
+
+    40% {
+        transform: translateY(0) scale(1)
+    }
+}
+
+@keyframes side-to-side {
+    0% {
+        transform: translateX(0)
+    }
+
+    5% {
+        transform: translateX(-5px)
+    }
+
+    10% {
+        transform: translateX(-5px)
+    }
+
+    20% {
+        transform: translateX(5px)
+    }
+
+    25% {
+        transform: translateX(5px)
+    }
+
+    35% {
+        transform: translateX(-5px)
+    }
+
+    40% {
+        transform: translateX(-5px)
+    }
+
+    45% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes wide-open {
+    0% {
+        opacity: 0
+    }
+
+    40% {
+        opacity: 0;
+        transform: scaleY(0)
+    }
+
+    42% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes chew {
+    0% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    2% {
+        transform: translateY(3px) rotate(-3deg)
+    }
+
+    4% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    6% {
+        transform: translateY(3px) rotate(-3deg)
+    }
+
+    8% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    10% {
+        transform: translateY(3px) rotate(-3deg)
+    }
+
+    12% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    14% {
+        transform: translateY(3px) rotate(0deg)
+    }
+
+    18% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    26% {
+        transform: translateY(15px)
+    }
+
+    78% {
+        transform: translateY(15px)
+    }
+
+    80% {
+        transform: translateY(0) rotate(0deg)
+    }
+
+    to {
+        transform: translateY(0) rotate(0deg)
+    }
+}
+
+@keyframes hair {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scaleY(.8)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes bg-fade {
+    0% {
+        background: #86a546
+    }
+
+    40% {
+        background: #86a546
+    }
+
+    45% {
+        background: #e09927
+    }
+
+    55% {
+        background: #e09927
+    }
+
+    60% {
+        background: #86a546
+    }
+}
+
+.AccountSwitcher .profile .profile1 #left-brow {
+    transform-origin: center 80%;
+    animation: raise 10s ease-in-out infinite
+}
+
+.AccountSwitcher .profile .profile1 #sunglasses {
+    transform-origin: center 100%;
+    animation: tilt 10s ease .25s infinite
+}
+
+.AccountSwitcher .profile .profile1 #mustache {
+    transform-origin: center 90%;
+    animation: mustache 10s ease 0ms infinite
+}
+
+.AccountSwitcher .profile .profile2 #left-pupil, .AccountSwitcher .profile .profile2 #right-pupil {
+    animation: side-to-side 10s ease-in-out infinite alternate
+}
+
+.AccountSwitcher .profile .profile2 #left-eye-top, .AccountSwitcher .profile .profile2 #right-eye-top {
+    transform-origin: center bottom;
+    animation: wide-open 10s ease-in-out infinite alternate
+}
+
+.AccountSwitcher .profile .profile2 #bottom-beak, .AccountSwitcher .profile .profile2 #gillard {
+    transform-origin: center top;
+    animation: chew 20s ease-in-out infinite
+}
+
+.AccountSwitcher .profile .profile2 #hair {
+    animation: hair 4s ease infinite alternate
+}
+
+.AccountSwitcher .profile .profile3 svg {
+    animation: bg-fade 10s ease infinite
+}
+
+    .AccountSwitcher .profile .profile3 svg #smile {
+        width: 100px
+    }
+
+.LogoutButton {
+    padding: 5px 15px;
+    color: #6d6d6d;
+    font-size: 17px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    border: 1px solid #6d6d6d;
+    transition: all .3s ease
+}
+
+    .LogoutButton:hover {
+        color: #fff;
+        border: 1px solid #fff
+    }

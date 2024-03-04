@@ -13,3 +13,8 @@
 /NetflixApi.Domain/NetflixApi.Domain/obj
 /NetflixApi.Infrastructure/bin/Debug/net8.0
 /NetflixApi.Infrastructure/obj
+.vs
+NetflixApi.Domain/NetflixApi.Application.IntegrationTests/bin
+NetflixApi.Domain/NetflixApi.Application.IntegrationTests/obj
+Netflix.Frontend/bin
+Netflix.Frontend/obj

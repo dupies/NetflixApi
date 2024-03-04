@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NetflixApi.Domain.Shared;
-using NetflixApi.Domain.TVShows;
 using NetflixApi.Domain.Users;
+
 
 namespace NetflixApi.Infrastructure.Configurations;
 
@@ -13,6 +13,10 @@ internal sealed class UserConfigurations : IEntityTypeConfiguration<User>
         builder.ToContainer("Users")
             .HasNoDiscriminator()
             .HasKey(c => c.Id);
+
+        builder.HasMany(c => c.WatchHistories)
+            .WithOne(wh => wh.User)
+            .HasForeignKey(wh => wh.UserId);
 
         builder.Property(c => c.Name)
             .HasConversion(

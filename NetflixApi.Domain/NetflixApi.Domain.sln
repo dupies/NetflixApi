@@ -15,9 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Data", "03 - Data", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetflixApi.Infrastructure", "..\NetflixApi.Infrastructure\NetflixApi.Infrastructure.csproj", "{B1B89E41-68AC-4FDF-BE6C-9D919AAD7FF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetflixApi.Api", "..\NetflixApi.Api\NetflixApi.Api.csproj", "{511A5AFE-FC20-474E-90F9-FD3D6F609235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetflixApi.Api", "..\NetflixApi.Api\NetflixApi.Api.csproj", "{511A5AFE-FC20-474E-90F9-FD3D6F609235}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - APIs", "04 - APIs", "{DB098420-79AF-4AA4-AB04-3AAB7EE385ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Tests", "05 - Tests", "{03BEBF60-40E3-408A-96E9-04A2654DECD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetflixApi.Application.IntegrationTests", "NetflixApi.Application.IntegrationTests\NetflixApi.Application.IntegrationTests.csproj", "{155A289B-CA9F-4C9D-A23C-6CC944C50605}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 - Frontends", "06 - Frontends", "{9E18C010-A57C-4269-B38F-82EBA3D62607}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netflix.Frontend", "..\Netflix.Frontend\Netflix.Frontend.csproj", "{9FBA65F3-BFFB-47FD-BD89-CDA699D89BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +49,14 @@ Global
 		{511A5AFE-FC20-474E-90F9-FD3D6F609235}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{511A5AFE-FC20-474E-90F9-FD3D6F609235}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{511A5AFE-FC20-474E-90F9-FD3D6F609235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{155A289B-CA9F-4C9D-A23C-6CC944C50605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155A289B-CA9F-4C9D-A23C-6CC944C50605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155A289B-CA9F-4C9D-A23C-6CC944C50605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155A289B-CA9F-4C9D-A23C-6CC944C50605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FBA65F3-BFFB-47FD-BD89-CDA699D89BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBA65F3-BFFB-47FD-BD89-CDA699D89BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBA65F3-BFFB-47FD-BD89-CDA699D89BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBA65F3-BFFB-47FD-BD89-CDA699D89BFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +66,8 @@ Global
 		{113F04B2-7D61-4EE7-A78E-CEEB1FA0983F} = {4F242758-954D-4457-BAFA-3C5139987514}
 		{B1B89E41-68AC-4FDF-BE6C-9D919AAD7FF7} = {5C767807-3CF8-4451-8E48-296FB0EA9746}
 		{511A5AFE-FC20-474E-90F9-FD3D6F609235} = {DB098420-79AF-4AA4-AB04-3AAB7EE385ED}
+		{155A289B-CA9F-4C9D-A23C-6CC944C50605} = {03BEBF60-40E3-408A-96E9-04A2654DECD6}
+		{9FBA65F3-BFFB-47FD-BD89-CDA699D89BFA} = {9E18C010-A57C-4269-B38F-82EBA3D62607}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA31509A-FEA6-498D-8341-7643BD4B3802}

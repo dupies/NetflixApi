@@ -1,15 +1,13 @@
 ﻿using NetflixApi.Domain.Abstractions;
 using NetflixApi.Domain.Shared;
+using NetflixApi.Domain.Users;
 
 namespace NetflixApi.Domain.Movies;
 public class Movie : Entity
 {
-    public Movie(int id)
-        : base(id)
+    public Movie()
     {
-
     }
-
     public Movie(
         int id,
         bool adult,
@@ -29,7 +27,6 @@ public class Movie : Entity
     {
         Adult = adult;
         Backdrop_path = new(backdrop_path);
-        Genre_ids = genre_ids;
         Original_language = new(original_language);
         Original_title = new(original_title);
         Overview = new(overview);
@@ -40,6 +37,7 @@ public class Movie : Entity
         Video = video;
         Vote_average = new(vote_average);
         Vote_count = new(vote_count);
+        Users = new List<User>();
     }
 
     public bool Adult { get; set; }
@@ -55,4 +53,5 @@ public class Movie : Entity
     public bool Video { get; set; }
     public Vote_average Vote_average { get; set; }
     public Vote_count Vote_count { get; set; }
+    public virtual ICollection<User> Users { get; set; }
 }

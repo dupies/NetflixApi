@@ -10,8 +10,8 @@
             <div class="movie-card" style="background-image: url('@($"{BaseUrl}{movie.Poster_path}")');">
                 <div class="movie-info">
                     <h6>@movie.Title</h6>
-                    <i class="bi bi-play-circle play-button"></i>
-                    <i class="bi bi-heart-fill like-icon" ></i>
+                    <i class="bi bi-play-circle play-button" @onclick="() => Play(movie.Id)"></i>
+                    <i class="bi bi-heart-fill like-icon"></i>
                     <h4>@movie.Vote_average.ToString()</h4>
                     <p>@movie.Release_date</p>
                     <p>@movie.Popularity</p>
